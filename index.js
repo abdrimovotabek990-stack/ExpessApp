@@ -1,24 +1,25 @@
 import 'dotenv/config'
 import express from 'express'
-import path, {dirname}  from 'path'
-import{fileURLToPath} from 'url'
+import { create } from 'express-handlebars';
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
 
 const app = express()
 
-
-app.get('/',(req, res, next) => {
-    res.status(200)
-    res.sendFile(path.join(__dirname, 'views', 'index.html'))
-    
+const hbs = create({
+    defaultLayout: 'main',
+    extname: 'hbs'
 })
 
-app.get('/about',(req, res, next) => {
-    res.status(200)
-    res.sendFile(path.join(__dirname, 'views', 'about.html'))
-    
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+app.set('views', './views');
+
+app.get('/',(req, res, next) => {
+    res.render('index')
+})
+
+app.get('/about',(req, res, next) => {  
+    res.render('about')
 })
 
 
