@@ -8,30 +8,43 @@ const router = Router()
 router.get('/login',(req, res) => {  
     res.render('login', {
         title: 'login | Yuriii',
-        isLogin: true
+        isLogin: true,
+        loginError: req.flash('loginError')
     })
 })
 
 router.get('/register',(req, res) => {  
     res.render('register', {
         title: 'Register | Yuriii',
-        isRegister: true
+        isRegister: true,
+        registerError: req.flash('registerError')
     })
 })
 
 
 router.post('/login',async (req, res) => {
-    const existuser = await User.findOne({email: req.body.email})
-    if(!existuser) {
-        console.log('User not found')
-        return     
+    const {email, password} = req.body
+    
+    if(!email || !password) {
+        req.flash('loginError', "Ochiq maydonlarni to'ldiring!")
+        res.redirect('/login')
+        return
     }
 
-    const isPassEqual = await brcypt.compare(req.body.password, existuser.password)  
+
+    const existuser = await User.findOne({email})
+    if(!existuser) {
+        req.flash('loginError', "User not found")
+        res.redirect('/login')  
+        return  
+    }
+
+    const isPassEqual = await brcypt.compare(password, existuser.password)  
     
     if(!isPassEqual) {
-        console.log('Parol xato')
-        return 
+        req.flash('loginError', "Parol xato")
+        res.redirect('/login')  
+        return  
     }
     
     console.log(existuser);
@@ -40,13 +53,26 @@ router.post('/login',async (req, res) => {
 })
 
 router.post('/register', async(req, res) => {
-    const body = req.body
+    
+    const {firstname, lastname, email, password} = req.body
+    if(!firstname || !lastname || !email || !password) {
+        req.flash('registerError', "Ochiq maydonlarni to'ldiring!")
+        res.redirect('/register')
+        return
+    }
+    const condidate = await User.findOne({email})
+    if (condidate) {
+        req.flash('registerError', 'User already exist')
+        res.redirect('/register')
+        return
+    }
 
-    const hashedPassword = await brcypt.hash(body.password, 10)
+    const hashedPassword = await brcypt.hash(req.body.password, 10)
+
     const userData = {
-        firstName: body.firstname,
-        lastName: body.lastname,
-        email: body.email,
+        firstName: firstname,
+        lastName: lastname,
+        email: email,
         password: hashedPassword,
     }
     const user = await User.create(userData)
