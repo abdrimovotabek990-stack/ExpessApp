@@ -16,6 +16,8 @@ const hbs = create({
     extname: 'hbs'
 })
 
+console.log(app)
+
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', './views');
@@ -26,6 +28,8 @@ app.use(express.json())
 
 app.use(Authroutes)
 app.use(ProductsRoutes)
+
+
 
 
 const startApp = () => {
