@@ -1,0 +1,65 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ranglar va Gradientlar -->
+  <defs>
+    <linearGradient id="y_grad_main" x1="16" y1="52" x2="52" y2="10" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B1954"/>
+      <stop offset="45%" stop-color="#2565AE"/>
+      <stop offset="100%" stop-color="#2AF5D2"/>
+    </linearGradient>
+    <linearGradient id="y_grad_left" x1="14" y1="12" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#48CAE4"/>
+      <stop offset="100%" stop-color="#1D3557"/>
+    </linearGradient>
+    <linearGradient id="base_grad" x1="20" y1="51" x2="44" y2="51" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5A189A"/>
+      <stop offset="100%" stop-color="#2AF5D2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dumaloq burchakli to'q fon (shakllarni kattaroq ko'rsatish uchun) -->
+  <rect width="64" height="64" rx="16" fill="#070D14"/>
+
+  <!-- Chap tarafdagi mikrosxema chiziqlari -->
+  <g stroke="#48CAE4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22 15 H13 L9 11"/>
+    <circle cx="7" cy="9" r="2.2" fill="#070D14"/>
+    <path d="M25 20 H12 L8 16"/>
+    <circle cx="6" cy="14" r="2" fill="#070D14"/>
+    <path d="M28 25 H15 L11 21"/>
+    <circle cx="9" cy="19" r="2" fill="#070D14"/>
+    <path d="M30 30 H22 L18 26"/>
+    <circle cx="16" cy="24" r="1.8" fill="#070D14"/>
+  </g>
+
+  <!-- O'ng tarafdagi mikrosxema chiziqlari -->
+  <g stroke="#2AF5D2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M45 13 H53 L57 9"/>
+    <circle cx="58.5" cy="7.5" r="2.2" fill="#070D14"/>
+    <path d="M42 19 H52 L56 15"/>
+    <circle cx="57.5" cy="13.5" r="2" fill="#070D14"/>
+    <path d="M39 25 H49 L53 21"/>
+    <circle cx="54.5" cy="19.5" r="2" fill="#070D14"/>
+    <path d="M36 32 L43 25"/>
+    <circle cx="44.5" cy="23.5" r="1.8" fill="#070D14"/>
+  </g>
+
+  <!-- 'Y' harfining chap qanoti -->
+  <path d="M18 10 H27 L34 22 L29 28 L18 10 Z" fill="url(#y_grad_left)"/>
+
+  <!-- Chap qanot ichidagi sxema izlari -->
+  <g stroke="#72EFDD" stroke-width="1.5" stroke-linecap="round">
+    <path d="M24 10 V19 L29 25"/>
+    <circle cx="24" cy="10" r="2" fill="#070D14"/>
+    <path d="M28 17 V22"/>
+    <circle cx="28" cy="16" r="1.6" fill="#070D14"/>
+  </g>
+
+  <!-- 'Y' harfining asosiy o'ng qismi va poyasi -->
+  <path d="M39 10 H49 L35 30 C33 33 33 35 33 46 H27 C27 38 27 35 30 31 L39 10 Z" fill="url(#y_grad_main)"/>
+
+  <!-- 'Y' poyasining o'ng ustuni -->
+  <path d="M35 32 L38 28 V46 H35 V32 Z" fill="#2AF5D2" opacity="0.85"/>
+
+  <!-- Pastki taglik chizig'i -->
+  <rect x="20" y="49" width="24" height="2.5" rx="1.25" fill="url(#base_grad)"/>
+</svg>

@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="2048" height="2048">
+  <defs>
+    <!-- Yumshoq soya effekti -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#1a365d" flood-opacity="0.18"/>
+    </filter>
+
+    <!-- O'ng asosiy Y qanoti — ustki yorqin firuza-moviy gradient -->
+    <linearGradient id="mainWingGrad" x1="65%" y1="8%" x2="25%" y2="92%">
+      <stop offset="0%" stop-color="#6fffe9"/>
+      <stop offset="28%" stop-color="#48bfe3"/>
+      <stop offset="55%" stop-color="#1e6091"/>
+      <stop offset="78%" stop-color="#240046"/>
+      <stop offset="100%" stop-color="#5a189a"/>
+    </linearGradient>
+
+    <!-- O'ng asosiy Y qanoti — o'ng qirra 3D qiya kesimi (bevel) -->
+    <linearGradient id="mainBevelGrad" x1="80%" y1="10%" x2="20%" y2="95%">
+      <stop offset="0%" stop-color="#48cae4"/>
+      <stop offset="35%" stop-color="#1d4e89"/>
+      <stop offset="65%" stop-color="#1e1b4b"/>
+      <stop offset="88%" stop-color="#3c096c"/>
+      <stop offset="100%" stop-color="#7b2cbf"/>
+    </linearGradient>
+
+    <!-- Chap yuqori Y qanoti gradienti -->
+    <linearGradient id="leftWingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#184e77"/>
+      <stop offset="50%" stop-color="#1e88e5"/>
+      <stop offset="100%" stop-color="#1a535c"/>
+    </linearGradient>
+
+    <!-- Pastki o'ng ustun gradienti -->
+    <linearGradient id="rightPillarGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#48cae4"/>
+      <stop offset="55%" stop-color="#1d4e89"/>
+      <stop offset="100%" stop-color="#240046"/>
+    </linearGradient>
+
+    <!-- Taglik (Pedestal) gorizontal gradienti -->
+    <linearGradient id="pedestalGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#3c096c"/>
+      <stop offset="35%" stop-color="#1d4e89"/>
+      <stop offset="75%" stop-color="#38a3a5"/>
+      <stop offset="100%" stop-color="#64dfdf"/>
+    </linearGradient>
+
+    <!-- Mikrosxema chiziqlari (Circuit traces) gradienti -->
+    <linearGradient id="circuitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#56cfe1"/>
+      <stop offset="45%" stop-color="#2b9eb3"/>
+      <stop offset="100%" stop-color="#1d3557"/>
+    </linearGradient>
+
+    <!-- "YURIII" yozuvi uchun xrom-metallik ko'k gradient -->
+    <linearGradient id="textMetalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#64dfdf"/>
+      <stop offset="38%" stop-color="#48bfe3"/>
+      <stop offset="52%" stop-color="#0d3b66"/>
+      <stop offset="72%" stop-color="#1d4e89"/>
+      <stop offset="100%" stop-color="#2b9eb3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Oq yumaloq burchakli asosiy fon (2K tiniqlikda) -->
+  <rect width="1024" height="1024" rx="185" fill="#ffffff"/>
+
+  <g filter="url(#softShadow)">
+    <!-- ================= CHAP QANOT VA MIKROSXEMALAR ================= -->
+    <path d="M 235 103 L 302 103 L 328 135 L 328 172 L 304 172 Z" 
+          fill="url(#leftWingGrad)" stroke="#234e70" stroke-width="5" stroke-linejoin="round"/>
+    
+    <path d="M 342 103 L 385 103 L 434 166 L 388 166 L 360 135 L 342 135 Z" 
+          fill="url(#leftWingGrad)" stroke="#234e70" stroke-width="5" stroke-linejoin="round"/>
+
+    <path d="M 420 155 L 516 268 C 524 278 524 295 514 307 L 494 330 L 446 282 L 446 218 L 418 218 Z" 
+          fill="url(#leftWingGrad)" stroke="#234e70" stroke-width="5" stroke-linejoin="round"/>
+
+    <!-- Chap tarafdagi mikrosxema yo'llari -->
+    <g fill="none" stroke="url(#circuitGrad)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 184 128 L 238 128 L 305 198 L 352 198" stroke-width="14"/>
+      <path d="M 184 128 L 238 128 L 305 198 L 352 198" stroke="#72efdd" stroke-width="4" opacity="0.7"/>
+
+      <path d="M 156 164 L 245 164 L 292 212 L 352 212" stroke-width="13"/>
+      <path d="M 156 164 L 245 164 L 292 212 L 352 212" stroke="#72efdd" stroke-width="3.5" opacity="0.65"/>
+
+      <path d="M 182 198 L 222 198 L 260 236 L 352 236" stroke-width="14"/>
+      <path d="M 182 198 L 222 198 L 260 236 L 352 236" stroke="#72efdd" stroke-width="4" opacity="0.65"/>
+
+      <path d="M 322 142 L 322 155 L 368 200 L 368 298 L 442 368" stroke-width="15"/>
+      <path d="M 322 142 L 322 155 L 368 200 L 368 298 L 442 368" stroke="#72efdd" stroke-width="4.5" opacity="0.75"/>
+
+      <path d="M 392 185 L 392 300 L 456 358" stroke-width="14"/>
+      <path d="M 392 185 L 392 300 L 456 358" stroke="#72efdd" stroke-width="4" opacity="0.7"/>
+
+      <path d="M 318 268 L 368 268" stroke-width="12"/>
+      <path d="M 296 292 L 335 292 L 358 312 L 405 312" stroke-width="12"/>
+      <path d="M 308 314 L 338 338 L 404 338 L 434 368 L 414 405 L 414 654" stroke-width="14"/>
+      <path d="M 308 314 L 338 338 L 404 338 L 434 368 L 414 405 L 414 654" stroke="#56cfe1" stroke-width="4" opacity="0.65"/>
+
+      <path d="M 418 280 L 418 302 L 470 348" stroke-width="11"/>
+      <path d="M 446 254 L 446 284 L 486 324" stroke-width="12"/>
+      <path d="M 446 254 L 446 284 L 486 324" stroke="#72efdd" stroke-width="3.5" opacity="0.7"/>
+    </g>
+
+    <!-- Chap tarafdagi mikrosxema halqalari -->
+    <g fill="#ffffff" stroke="url(#circuitGrad)" stroke-width="10">
+      <circle cx="164" cy="128" r="18"/>
+      <circle cx="136" cy="164" r="14" stroke-width="8"/>
+      <circle cx="162" cy="198" r="18" fill="#1d4e89" stroke="#56cfe1" stroke-width="9"/>
+      <circle cx="162" cy="198" r="6" fill="#ffffff" stroke="none"/>
+      <circle cx="322" cy="118" r="20"/>
+      <circle cx="392" cy="168" r="16" stroke-width="9"/>
+      <circle cx="446" cy="236" r="15" stroke-width="9"/>
+      <circle cx="418" cy="266" r="11" stroke-width="7"/>
+      <circle cx="305" cy="268" r="12" stroke-width="8"/>
+      <circle cx="282" cy="292" r="12" stroke-width="8"/>
+    </g>
+    <g fill="none" stroke="#72efdd" stroke-width="3">
+      <circle cx="164" cy="128" r="18"/>
+      <circle cx="322" cy="118" r="20"/>
+      <circle cx="392" cy="168" r="16"/>
+      <circle cx="446" cy="236" r="15"/>
+    </g>
+
+    <!-- ================= O'NG QANOT MIKROSXEMALARI ================= -->
+    <g fill="none" stroke="url(#circuitGrad)" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 795 130 L 844 130" stroke-width="14"/>
+      <path d="M 795 130 L 844 130" stroke="#72efdd" stroke-width="4" opacity="0.75"/>
+
+      <path d="M 744 205 L 802 165 L 872 165" stroke-width="13"/>
+      <path d="M 744 205 L 802 165 L 872 165" stroke="#72efdd" stroke-width="3.5" opacity="0.7"/>
+
+      <path d="M 718 238 L 782 238 L 818 198 L 844 198" stroke-width="14"/>
+      <path d="M 718 238 L 782 238 L 818 198 L 844 198" stroke="#72efdd" stroke-width="4" opacity="0.7"/>
+
+      <path d="M 684 268 L 724 268" stroke-width="12"/>
+      
+      <path d="M 652 355 L 702 294 L 748 294" stroke-width="13"/>
+      <path d="M 652 355 L 702 294 L 748 294" stroke="#72efdd" stroke-width="3.5" opacity="0.7"/>
+
+      <path d="M 712 315 L 656 382" stroke-width="13"/>
+      <path d="M 615 370 C 632 385 628 410 612 430 L 588 456 L 588 654" stroke-width="14"/>
+      <path d="M 615 370 C 632 385 628 410 612 430 L 588 456 L 588 654" stroke="#56cfe1" stroke-width="3.5" opacity="0.65"/>
+      <path d="M 604 392 L 582 422" stroke-width="11"/>
+    </g>
+
+    <g fill="#ffffff" stroke="url(#circuitGrad)" stroke-width="10">
+      <circle cx="860" cy="130" r="18"/>
+      <circle cx="888" cy="165" r="13" stroke-width="8"/>
+      <circle cx="860" cy="198" r="18"/>
+      <circle cx="736" cy="268" r="12" stroke-width="8"/>
+      <circle cx="760" cy="294" r="12" stroke-width="8"/>
+    </g>
+    <g fill="none" stroke="#72efdd" stroke-width="3">
+      <circle cx="860" cy="130" r="18"/>
+      <circle cx="860" cy="198" r="18"/>
+    </g>
+
+    <!-- ================= ASOSIY MARKAZIY "Y" KORPUSI (3D) ================= -->
+    <path d="M 465 362 C 442 384 434 405 434 438 L 434 654" 
+          fill="none" stroke="url(#circuitGrad)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 465 362 C 442 384 434 405 434 438 L 434 654" 
+          fill="none" stroke="#56cfe1" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+
+    <!-- 3D Bevel qatlami -->
+    <path d="M 638 102 L 808 102 L 592 382 C 570 408 525 435 504 468 L 504 654 L 448 654 L 448 432 C 448 398 462 376 488 350 L 526 312 C 538 296 538 272 526 250 Z" 
+          fill="url(#mainBevelGrad)" stroke="#233dff" stroke-width="2" stroke-linejoin="round"/>
+
+    <!-- Ustki firuza-moviy yorqin qatlam -->
+    <path d="M 638 102 L 752 102 L 542 368 C 514 402 472 426 472 468 L 472 654 L 448 654 L 448 432 C 448 398 462 376 488 350 L 526 312 C 538 296 538 272 526 250 Z" 
+          fill="url(#mainWingGrad)"/>
+
+    <!-- Tashqi va ichki 3D qirra chiziqlari -->
+    <path d="M 638 102 L 808 102 L 592 382 C 570 408 525 435 504 468 L 504 654 L 448 654 L 448 432 C 448 398 462 376 488 350 L 526 312 C 538 296 538 272 526 250 Z" 
+          fill="none" stroke="#22577a" stroke-width="5.5" stroke-linejoin="round"/>
+    <path d="M 752 102 L 542 368 C 514 402 474 426 474 468 L 474 654" 
+          fill="none" stroke="#48cae4" stroke-width="3.5" opacity="0.65"/>
+
+    <!-- Pastki o'ng ustun -->
+    <path d="M 572 424 L 572 654 L 520 654 L 520 482 C 520 462 532 448 550 436 Z" 
+          fill="url(#rightPillarGrad)" stroke="#22577a" stroke-width="5.5" stroke-linejoin="round"/>
+    <path d="M 566 434 L 566 648" fill="none" stroke="#64dfdf" stroke-width="3" opacity="0.6"/>
+
+    <!-- ================= TAGLIK (PEDESTAL BASE) ================= -->
+    <path d="M 358 666 L 672 666 C 672 686 656 696 634 696 L 396 696 C 374 696 358 686 358 666 Z" 
+          fill="url(#pedestalGrad)" stroke="#22577a" stroke-width="5.5" stroke-linejoin="round"/>
+    <path d="M 366 670 L 664 670" fill="none" stroke="#80ffdb" stroke-width="3" opacity="0.75"/>
+
+    <!-- ================= "YURIII" MATNI (100% VEKTOR SHAKLLAR) ================= -->
+    <g fill="url(#textMetalGrad)" stroke="#1d4e89" stroke-width="4.5" stroke-linejoin="round">
+      <!-- Y -->
+      <path d="M 206 808 L 244 808 L 284 868 L 324 808 L 362 808 L 302 894 L 302 945 L 266 945 L 266 894 Z"/>
+      <!-- U -->
+      <path d="M 376 808 L 412 808 L 412 890 C 412 912 424 922 444 922 C 464 922 476 912 476 890 L 476 808 L 512 808 L 512 892 C 512 928 486 948 444 948 C 402 948 376 928 376 892 Z"/>
+      <!-- R -->
+      <path fill-rule="evenodd" d="M 538 808 L 608 808 C 638 808 656 824 656 850 C 656 870 644 884 624 890 L 658 945 L 618 945 L 588 894 L 574 894 L 574 945 L 538 945 Z M 574 834 L 574 868 L 604 868 C 614 868 620 861 620 851 C 620 841 614 834 604 834 Z"/>
+      <!-- I I I -->
+      <rect x="676" y="808" width="36" height="137" rx="3"/>
+      <rect x="736" y="808" width="36" height="137" rx="3"/>
+      <rect x="796" y="808" width="36" height="137" rx="3"/>
+    </g>
+
+    <!-- Harflar ustidagi 3D yaltirash chiziqlari -->
+    <g fill="none" stroke="#90e0ef" stroke-width="2" opacity="0.65" stroke-linecap="round">
+      <path d="M 212 812 L 241 812 L 284 875 L 327 812 L 356 812"/>
+      <path d="M 382 812 L 406 812 M 482 812 L 506 812"/>
+      <path d="M 544 812 L 608 812"/>
+      <path d="M 682 812 L 706 812"/>
+      <path d="M 742 812 L 766 812"/>
+      <path d="M 802 812 L 826 812"/>
+    </g>
+  </g>
+</svg>
