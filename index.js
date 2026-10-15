@@ -1,7 +1,8 @@
 import 'dotenv/config'
 import express from 'express'
 import { create } from 'express-handlebars';
-
+import Authroutes from './routes/auth.route.js'
+import ProductsRoutes from './routes/products.route.js'
 
 const app = express()
 
@@ -14,13 +15,11 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', './views');
 
-app.get('/',(req, res, next) => {
-    res.render('index')
-})
+app.use(Authroutes)
+app.use(ProductsRoutes)
 
-app.get('/about',(req, res, next) => {  
-    res.render('about')
-})
+
+
 
 
 
