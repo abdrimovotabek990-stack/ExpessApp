@@ -20,7 +20,22 @@ router.get('/register',(req, res) => {
 })
 
 
-router.post('/login',(req, res) => {
+router.post('/login',async (req, res) => {
+    const existuser = await User.findOne({email: req.body.email})
+    if(!existuser) {
+        console.log('User not found')
+        return     
+    }
+
+    const isPassEqual = await brcypt.compare(req.body.password, existuser.password)  
+    
+    if(!isPassEqual) {
+        console.log('Parol xato')
+        return 
+    }
+    
+    console.log(existuser);
+    
     res.redirect('/')
 })
 
