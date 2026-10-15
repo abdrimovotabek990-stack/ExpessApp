@@ -22,7 +22,7 @@ app.get('/about',(req, res, next) => {
     res.render('about')
 })
 
-const repo = repo
+
 
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => console.log(`Server ishga tushdi => ${PORT}`))
