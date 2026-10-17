@@ -77,6 +77,7 @@ router.post('/register', async(req, res) => {
         return
     }
     const condidate = await User.findOne({email})
+    
     if (condidate) {
         req.flash('registerError', 'User already exist')
         res.redirect('/register')
