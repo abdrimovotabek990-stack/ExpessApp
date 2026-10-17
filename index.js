@@ -3,9 +3,13 @@ import { create } from 'express-handlebars';
 import mongoose from 'mongoose';
 import flash from 'connect-flash'
 import session from 'express-session';
-import varMiddleware from './middlewares/var.js'
 import cookieParser from 'cookie-parser';
 import * as dotenv from 'dotenv'
+
+//Middlewares
+import varMiddleware from './middlewares/var.js'
+import userMiddleware from './middlewares/user.middleware.js';
+import hbsHelper from './utils/index.u.js'
 
 // Routes
 import Authroutes from './routes/auth.route.js'
@@ -17,7 +21,8 @@ const app = express()
 
 const hbs = create({
     defaultLayout: 'main',
-    extname: 'hbs'
+    extname: 'hbs',
+    helpers: hbsHelper
 })
 
 app.engine('hbs', hbs.engine);
@@ -31,9 +36,7 @@ app.use(cookieParser())
 app.use(session({secret: 'Yuri', resave: false, saveUninitialized: false}))
 app.use(flash())
 app.use(varMiddleware)
-app.use((req, res, next) => {
-    next()
-})
+app.use(userMiddleware)
 
 app.use(Authroutes)
 app.use(ProductsRoutes)
