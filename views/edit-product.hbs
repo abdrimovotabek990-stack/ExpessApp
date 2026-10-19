@@ -1,0 +1,64 @@
+<div class="w-75 mx-auto">
+  <p class="fs-1">Edit product </p>
+  {{#if errorEditProducts}}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Error!</strong>
+      {{errorEditProducts}}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+  {{/if}}
+  <form action="/edit-product/{{product._id}}" method="post">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        value="{{product.title}}"
+        class="form-control"
+        name="title"
+        id="floatingInput"
+        placeholder="Nomini kiriting"
+      />
+      <label for="floatingInput">Nomini kiriting</label>
+    </div>
+    <div class="form-floating mb-3">
+      <textarea
+        class="form-control"
+        placeholder="Description"
+        name="description"
+        id="floatingTextarea2"
+        style="height: 150px"
+      >{{product.description}}</textarea>
+      <label for="floatingTextarea2">Qo'shimcha ma'lumot kiriting</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        value="{{product.image}}"
+        type="text"
+        class="form-control"
+        name="image"
+        id="floatingInput"
+        placeholder="Image"
+      />
+      <label for="floatingInput">Rasm yuklash</label>
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text bg-light">$</span>
+      <div class="form-floating">
+        <input
+          type="number"
+          value="{{product.price}}"
+          class="form-control"
+          name="price"
+          id="floatingInputGroup1"
+          placeholder="Price"
+        />
+        <label for="floatingInputGroup1">Narxini kiriting</label>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-3">ma'lumotni yangilash</button>
+  </form>
+</div>
