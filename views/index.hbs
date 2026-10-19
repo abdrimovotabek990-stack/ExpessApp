@@ -27,10 +27,13 @@
                 type="button"
                 class="btn btn-outline-secondary" href="/edit-product/{{_id}}"
               >Edit</a>
+              <form action="/delete-product/{{_id}}" method="post">
               <button
-                type="button"
+                type="sumbit"
                 class="btn btn-outline-danger"
               >Delete</button>
+
+              </form>
               {{/ifequal}}
               {{/if}}
             </div>
